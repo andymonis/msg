@@ -1,0 +1,33 @@
+{
+    "name": "test",
+    "version": "1.0.16",
+    "description": "Test endpoint to drive urls",
+    "main": "index.js",
+    "app": {
+        "manifest": {
+            "service_worker": "network_or_cache"
+        },
+        "frameworks": [
+            "tailwindcss-2",
+            "knockout"
+        ]
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "commit": "git add . && git commit -m 'Checking in latest' && git push",
+        "tag": "npm --no-git-tag-version version patch && npm run commit",
+        "tailwind-build": "npx tailwindcss ../../v3/node_modules/tailwindcss/tailwind.css -o ./tailwind.css --purge './components/*.js,./main.html' --minify",
+        "sass-build": "sass main.scss main.css -s compressed",
+        "build-css": "npm run tailwind-build && npm run sass-build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andymonis/test.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andymonis/test/issues"
+    },
+    "homepage": "https://github.com/andymonis/test#readme"
+}
